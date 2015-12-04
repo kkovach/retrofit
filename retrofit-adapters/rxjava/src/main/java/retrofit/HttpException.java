@@ -1,7 +1,7 @@
 package retrofit;
 
 /** Exception for an unexpected, non-2xx HTTP response. */
-public final class HttpException extends Exception {
+public final class HttpException extends RuntimeException {
   private final int code;
   private final String message;
   private final transient Response<?> response;

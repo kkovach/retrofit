@@ -78,9 +78,8 @@ public final class RxJavaCallAdapterFactoryTest {
     try {
       o.first();
       fail();
-    } catch (RuntimeException e) {
-      Throwable cause = e.getCause();
-      assertThat(cause).isInstanceOf(HttpException.class).hasMessage("HTTP 404 OK");
+    } catch (HttpException e) {
+      assertThat(e).isInstanceOf(HttpException.class).hasMessage("HTTP 404 OK");
     }
   }
 
